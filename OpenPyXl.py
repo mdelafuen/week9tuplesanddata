@@ -11,7 +11,7 @@ def examine_income_data(excel_file_name):
         state_name = state_cell.value
         median_income2018 = current_row[1].value
         if not isinstance(median_income2018, numbers.Number):
-            continue # if not number, continue the loop
+            continue # if median come column does not contain a number, skip it and continue the loop
         #print(f"{state_name}\t: {median_income2018}")
         median2016col_number = openpyxl.utils.cell.column_index_from_string('H')-1
         median2016_income = current_row[median2016col_number].value
